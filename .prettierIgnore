@@ -1,0 +1,12 @@
+.next
+.cache
+package-lock.json
+yarn.lock
+public
+node_modules
+next-env.d.ts
+.dockerignore
+docker
+dist
+next.config.ts
+.env
