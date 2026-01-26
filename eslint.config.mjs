@@ -19,6 +19,7 @@ const eslintConfig = defineConfig([
     rules: {
       '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
+      'import/no-anonymous-default-export': 'off',
       '@next/next/no-img-element': 'off',
       'react/display-name': 'off',
       '@next/next/no-head-element': 'off',
