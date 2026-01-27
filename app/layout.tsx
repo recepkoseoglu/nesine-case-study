@@ -6,11 +6,7 @@ export const metadata = {
   description: 'Nesine Case Study using Next.js, TypeScript and Redux Toolkit'
 };
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
@@ -18,4 +14,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

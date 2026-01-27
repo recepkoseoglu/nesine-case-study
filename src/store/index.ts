@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counter/counterSlice';
+import betslipReducer from './betslip/betslipSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer
+    betslip: betslipReducer
   }
 });
 
