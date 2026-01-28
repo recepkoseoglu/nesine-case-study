@@ -58,13 +58,13 @@ const HomePage = () => {
             </div>
             <div className="grid grid-cols-3 gap-3">
               <button className="py-2 rounded-md bg-gray-100 hover:bg-gray-200">
-                Home
+                1
               </button>
               <button className="py-2 rounded-md bg-gray-100 hover:bg-gray-200">
-                Draw
+                X
               </button>
               <button className="py-2 rounded-md bg-gray-100 hover:bg-gray-200">
-                Away
+                2
               </button>
             </div>
           </div>

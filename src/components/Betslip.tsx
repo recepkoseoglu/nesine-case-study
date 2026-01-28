@@ -4,31 +4,30 @@ import { useAppSelector } from '../store/hooks';
 
 const Betslip = () => {
   const bets = useAppSelector((s) => s.betslip.bets);
+  const list = Object.values(bets);
 
   const totalStake = useMemo(() => {
-    const list = Object.values(bets);
     if (list.length === 0) return 0;
-    return Object.values(bets).reduce((acc, b) => {
+    return list.reduce((acc, b) => {
       return acc * (Number(b.oc?.O) || 1);
     }, 1);
-  }, [bets]);
+  }, [list]);
 
   return (
     <div className="fixed bottom-0 right-0 bg-white border border-gray-300 py-4 m-4 w-120 shadow-lg text-sm">
-      <ul style={{ paddingLeft: 16 }}>
-        {Object.values(bets).map((b) => {
-          return (
-            <li key={b.id} style={{ marginBottom: 8 }}>
-              <div className="border-b border-gray-300 py-1 flex gap-4 items-center">
-                <p>{b.oc?.MBS}</p>
-                <p>Kod: {b.bet.C}</p>
-                <p>Maç: {b.bet.N}</p>
-                <strong>Oran: {b.oc?.O}</strong>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      {list.map((b) => {
+        return (
+          <div
+            key={b.id}
+            className="border-b border-gray-300 p-2 flex gap-4 items-center"
+          >
+            <span>{b.oc?.MBS}</span>
+            <span>Kod: {b.bet.C}</span>
+            <span>Maç: {b.bet.N}</span>
+            <strong>Oran: {b.oc?.O}</strong>
+          </div>
+        );
+      })}
       <div className="p-4 text-md">
         Toplam Tutar:{' '}
         <b>
